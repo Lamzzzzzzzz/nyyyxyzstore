@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Login Panel</title>
+<style>
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.box {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:15px;
+  width:300px;
+  color:white;
+  box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+input {
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+}
+button {
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#00c6ff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover {
+  background:#0072ff;
+}
+</style>
 </head>
 <body>
 
-<div class="hero">
-  <h1>Login Panel</h1>
-
-  <input id="email" type="email" placeholder="Email"><br><br>
-  <input id="password" type="password" placeholder="Password"><br><br>
+<div class="box">
+  <h2>LOGIN PANEL</h2>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
 
   <button onclick="login()">Login</button>
   <button onclick="register()">Register</button>
@@ -18,59 +57,54 @@
 </div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword, 
-  GoogleAuthProvider, 
-  signInWithPopup 
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBhSu9CnvQ-wLG-oHh8ad4DfIVZ3mb54ic",
-  authDomain: "nyyyxyz.firebaseapp.com",
-  projectId: "nyyyxyz",
-  storageBucket: "nyyyxyz.firebasestorage.app",
-  messagingSenderId: "670710617337",
-  appId: "1:670710617337:web:9d9db504507feeebb13e28",
-  measurementId: "G-45GCEKFWYL"
+  apiKey: "ISI PUNYA LU",
+  authDomain: "ISI PUNYA LU",
+  projectId: "ISI PUNYA LU",
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-window.login = function() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.login = async () => {
+  const email = email.value;
+  const pass = password.value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Login berhasil!");
-      window.location.href = "dashboard.html";
-    })
-    .catch(err => alert(err.message));
-}
+  try {
+    await signInWithEmailAndPassword(auth,email,pass);
+    location.href = "dashboard.html";
+  } catch(e) {
+    alert(e.message);
+  }
+};
 
-window.register = function() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.register = async () => {
+  try {
+    await createUserWithEmailAndPassword(auth,email.value,password.value);
+    alert("Register berhasil, silakan login");
+  } catch(e) {
+    if (e.code === "auth/email-already-in-use") {
+      alert("Email sudah dipakai, login aja");
+    } else {
+      alert(e.message);
+    }
+  }
+};
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => alert("Register berhasil!"))
-    .catch(err => alert(err.message));
-}
-
-window.loginGoogle = function() {
+window.loginGoogle = async () => {
   const provider = new GoogleAuthProvider();
-
-  signInWithPopup(auth, provider)
-    .then(() => {
-      alert("Login Google berhasil!");
-      window.location.href = "dashboard.html";
-    })
-    .catch(err => alert(err.message));
-}
+  await signInWithPopup(auth, provider);
+  location.href = "dashboard.html";
+};
 </script>
 
 </body>
