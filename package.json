@@ -1,0 +1,39 @@
+{
+  "name": "nyyyxyzmodzofc",
+  "version": "1.0.0",
+  "description": "NyyyxyzModzOfc - Cyber Store Top Up Game & Cheat",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "topup",
+    "game",
+    "cheat",
+    "mods",
+    "voucher",
+    "cyber",
+    "store",
+    "qris"
+  ],
+  "author": "NyyyxyzModzOfc",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
