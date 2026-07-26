@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0c800;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c8cff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crown Icon -->
+  <g transform="translate(0, 5)">
+    <path d="M22 28 L28 12 L34 20 L40 8 L46 20 L52 12 L58 28 L22 28Z"
+          fill="url(#goldGrad)" />
+    <path d="M24 28 L56 28 L54 42 L26 42 L24 28Z"
+          fill="#2a2f3a" stroke="#ffd700" stroke-width="1.5" />
+    <rect x="30" y="34" width="4" height="8" rx="1" fill="#ffd700" />
+    <rect x="46" y="34" width="4" height="8" rx="1" fill="#ffd700" />
+  </g>
+
+  <!-- Nyyyxyz -->
+  <text x="72" y="36" font-family="Inter, sans-serif" font-weight="800" font-size="24"
+        fill="#f0f4fa" letter-spacing="0.5">
+    Nyyyxyz
+  </text>
+
+  <!-- ModzOfc -->
+  <text x="72" y="52" font-family="Inter, sans-serif" font-weight="600" font-size="14"
+        fill="url(#ac
