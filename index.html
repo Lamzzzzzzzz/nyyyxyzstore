@@ -3,12 +3,1023 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top Up Game Murah Terpercaya</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>VIPManz · Cyber Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0c12;
+            --bg-secondary: #11161f;
+            --bg-card: rgba(20, 28, 42, 0.85);
+            --bg-card-hover: rgba(30, 40, 58, 0.9);
+            --text-primary: #f0f4fa;
+            --text-secondary: #9aa8b9;
+            --text-muted: #5a6a7e;
+            --accent: #6c8cff;
+            --accent-dark: #4a6adf;
+            --accent-glow: rgba(108, 140, 255, 0.3);
+            --gold: #ffd700;
+            --gold-glow: rgba(255, 215, 0, 0.3);
+            --orange: #ff6b35;
+            --green: #00e676;
+            --border: rgba(255, 255, 255, 0.06);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --cyber-blue: #00d4ff;
+            --cyber-purple: #7b2ffc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== CYBER BACKGROUND : ITEM + PETIR ===== */
+        .cyber-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(123, 47, 252, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(108, 140, 255, 0.03) 0%, transparent 50%),
+                var(--bg-primary);
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* Floating Items */
+        .cyber-item {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0.06;
+            color: var(--cyber-blue);
+            animation: floatItem 20s infinite linear;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .cyber-item:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-duration: 22s;
+            font-size: 40px;
+            color: var(--cyber-purple);
+        }
+        .cyber-item:nth-child(2) {
+            top: 25%;
+            right: 8%;
+            animation-duration: 18s;
+            animation-delay: 2s;
+            font-size: 32px;
+        }
+        .cyber-item:nth-child(3) {
+            bottom: 30%;
+            left: 12%;
+            animation-duration: 25s;
+            animation-delay: 4s;
+            font-size: 48px;
+            color: var(--cyber-purple);
+        }
+        .cyber-item:nth-child(4) {
+            top: 60%;
+            right: 15%;
+            animation-duration: 20s;
+            animation-delay: 1s;
+            font-size: 36px;
+        }
+        .cyber-item:nth-child(5) {
+            top: 45%;
+            left: 45%;
+            animation-duration: 28s;
+            animation-delay: 3s;
+            font-size: 44px;
+            color: var(--cyber-purple);
+        }
+        .cyber-item:nth-child(6) {
+            bottom: 10%;
+            right: 25%;
+            animation-duration: 16s;
+            animation-delay: 5s;
+            font-size: 30px;
+        }
+        .cyber-item:nth-child(7) {
+            top: 5%;
+            left: 50%;
+            animation-duration: 24s;
+            animation-delay: 1.5s;
+            font-size: 34px;
+        }
+        .cyber-item:nth-child(8) {
+            bottom: 45%;
+            left: 30%;
+            animation-duration: 19s;
+            animation-delay: 3.5s;
+            font-size: 26px;
+            color: var(--cyber-purple);
+        }
+
+        @keyframes floatItem {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.04;
+            }
+            25% {
+                transform: translate(30px, -40px) rotate(5deg) scale(1.1);
+                opacity: 0.08;
+            }
+            50% {
+                transform: translate(-20px, 30px) rotate(-3deg) scale(0.9);
+                opacity: 0.05;
+            }
+            75% {
+                transform: translate(40px, 20px) rotate(4deg) scale(1.05);
+                opacity: 0.07;
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.04;
+            }
+        }
+
+        /* ===== CYBER LIGHTNING ===== */
+        .lightning-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .lightning {
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 47, 252, 0.05) 100%);
+            width: 3px;
+            height: 0;
+            top: -20px;
+            left: 20%;
+            opacity: 0;
+            filter: blur(2px);
+            animation: lightningStrike 8s infinite;
+        }
+
+        .lightning:nth-child(2) {
+            left: 60%;
+            animation-delay: 3.5s;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(123, 47, 252, 0.2) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+
+        .lightning:nth-child(3) {
+            left: 85%;
+            animation-delay: 6s;
+            width: 4px;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.12) 0%, rgba(108, 140, 255, 0.04) 100%);
+        }
+
+        .lightning:nth-child(4) {
+            left: 40%;
+            animation-delay: 2s;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, rgba(123, 47, 252, 0.03) 100%);
+        }
+
+        @keyframes lightningStrike {
+            0% {
+                height: 0;
+                opacity: 0;
+                top: -20px;
+            }
+            3% {
+                height: 30%;
+                opacity: 1;
+                top: 0;
+            }
+            5% {
+                opacity: 0.3;
+                height: 35%;
+            }
+            7% {
+                opacity: 1;
+                height: 40%;
+            }
+            9% {
+                opacity: 0;
+                height: 45%;
+            }
+            11% {
+                opacity: 0.8;
+                height: 50%;
+            }
+            13% {
+                opacity: 0;
+                height: 55%;
+            }
+            15% {
+                opacity: 0.6;
+                height: 60%;
+            }
+            17% {
+                opacity: 0;
+                height: 65%;
+            }
+            20% {
+                opacity: 0;
+                height: 70%;
+            }
+            100% {
+                opacity: 0;
+                height: 80%;
+                top: 100%;
+            }
+        }
+
+        /* ===== GLOW ORB ===== */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-orb.blue {
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.05);
+            top: -100px;
+            right: -100px;
+            animation: orbPulse 8s ease-in-out infinite;
+        }
+        .glow-orb.purple {
+            width: 350px;
+            height: 350px;
+            background: rgba(123, 47, 252, 0.04);
+            bottom: -80px;
+            left: -80px;
+            animation: orbPulse 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes orbPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.8;
+            }
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 12px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: rgba(17, 22, 31, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i {
+            color: var(--gold);
+            font-size: 22px;
+            filter: drop-shadow(0 0 10px var(--gold-glow));
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .logo span span {
+            color: var(--text-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav {
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+            background: transparent;
+            cursor: pointer;
+        }
+        .btn-nav:hover {
+            color: var(--text-primary);
+            background: var(--bg-card);
+        }
+        .btn-nav.primary {
+            background: var(--gold);
+            color: #0a0c12;
+            border-color: var(--gold);
+            box-shadow: 0 0 30px var(--gold-glow);
+        }
+        .btn-nav.primary:hover {
+            background: #f0c800;
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px var(--gold-glow);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 40px 0 50px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            width: fit-content;
+            backdrop-filter: blur(8px);
+        }
+        .hero-badge i {
+            color: var(--cyber-blue);
+            margin-right: 6px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            max-width: 480px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .hero-search {
+            display: flex;
+            max-width: 440px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 60px;
+            overflow: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+        .hero-search:focus-within {
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+        }
+        .hero-search input {
+            flex: 1;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+        }
+        .hero-search input::placeholder {
+            color: var(--text-muted);
+        }
+        .hero-search button {
+            padding: 0 20px;
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .hero-search button:hover {
+            background: var(--accent-dark);
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products {
+            padding: 40px 0 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-header h2 i {
+            color: var(--cyber-blue);
+        }
+        .product-count {
+            font-size: 14px;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            padding: 4px 16px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(8px);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 14px 18px;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+        .product-card:hover {
+            border-color: var(--cyber-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.08);
+            background: var(--bg-card-hover);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+        }
+
+        .product-image {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--cyber-blue);
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .product-body h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .game-tag,
+        .platform-tag {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .game-tag i {
+            color: var(--orange);
+        }
+        .platform-tag i {
+            color: var(--green);
+        }
+
+        .product-discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff1744;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0 12px;
+        }
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .sold {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .sold i {
+            margin-right: 4px;
+        }
+
+        .btn-install {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-install:hover {
+            background: var(--accent-dark);
+            transform: scale(1.02);
+        }
+
+        .btn-checkout-gold {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--gold), #f0c800);
+            color: #0a0c12;
+            font-weight: 800;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 0 30px var(--gold-glow);
+            margin-top: 4px;
+        }
+        .btn-checkout-gold:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 50px var(--gold-glow);
+        }
+        .btn-checkout-gold i {
+            color: #0a0c12;
+        }
+
+        /* ===== TOP BUYERS (RESET) ===== */
+        .top-buyers {
+            padding: 40px 0 50px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .buyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .buyer-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+        .buyer-card:hover {
+            border-color: var(--cyber-blue);
+            background: var(--bg-card-hover);
+        }
+
+        .buyer-rank {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-muted);
+            min-width: 32px;
+        }
+        .buyer-card.gold .buyer-rank {
+            color: var(--gold);
+        }
+        .buyer-card.silver .buyer-rank {
+            color: #c0c0c0;
+        }
+        .buyer-card.bronze .buyer-rank {
+            color: #cd7f32;
+        }
+
+        .buyer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+        .buyer-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+        .buyer-detail h4 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .buyer-detail p {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .buyer-stats {
+            text-align: right;
+            font-size: 12px;
+        }
+        .buyer-stats span:first-child {
+            display: block;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .buyer-stats span:last-child {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        /* ===== QRIS MODAL ===== */
+        .qris-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .qris-modal.active {
+            display: flex;
+        }
+
+        .qris-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 80px rgba(0, 212, 255, 0.05);
+        }
+
+        .qris-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 24px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+        .qris-close:hover {
+            color: var(--text-primary);
+            transform: rotate(90deg);
+        }
+
+        .qris-content h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+        .qris-content .sub {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .qris-code {
+            background: #fff;
+            padding: 16px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 8px 0 16px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px var(--gold-glow);
+        }
+        .qris-code canvas {
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+
+        .qris-amount {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold);
+            margin: 8px 0 4px;
+        }
+
+        .qris-methods {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 14px 0 8px;
+        }
+        .qris-methods span {
+            background: var(--bg-card);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .qris-footer {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .qris-footer i {
+            color: var(--green);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 40px 0 24px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-brand .logo {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            max-width: 260px;
+            line-height: 1.6;
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .social-links a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 3px 0;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        .footer-links a i {
+            margin-right: 6px;
+            width: 18px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-actions .btn-nav {
+                display: none;
+            }
+            .nav-actions .btn-nav.primary {
+                display: inline-flex;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            }
+            .buyer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .product-card {
+                padding: 12px 10px 14px;
+            }
+            .product-body h3 {
+                font-size: 12px;
+            }
+            .price {
+                font-size: 14px;
+            }
+            .btn-install,
+            .btn-checkout-gold {
+                font-size: 10px;
+                padding: 6px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .qris-content {
+                padding: 24px 16px;
+            }
+            .qris-code canvas {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ===== CYBER BACKGROUND ===== -->
+    <div class="cyber-bg">
+        <div class="cyber-item"><i class="fas fa-microchip"></i></div>
+        <div class="cyber-item"><i class="fas fa-database"></i></div>
+        <div class="cyber-item"><i class="fas fa-cloud"></i></div>
+        <div class="cyber-item"><i class="fas fa-code"></i></div>
+        <div class="cyber-item"><i class="fas fa-crown"></i></div>
+        <div class="cyber-item"><i class="fas fa-robot"></i></div>
+        <div class="cyber-item"><i class="fas fa-bolt"></i></div>
+        <div class="cyber-item"><i class="fas fa-shield-alt"></i></div>
+    </div>
+
+    <div class="lightning-container">
+        <div class="lightning"></div>
+        <div class="lightning"></div>
+        <div class="lightning"></div>
+        <div class="lightning"></div>
+    </div>
+
+    <div class="glow-orb blue"></div>
+    <div class="glow-orb purple"></div>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
@@ -18,9 +1029,8 @@
                 <span>VIP<span>Manz</span></span>
             </div>
             <div class="nav-actions">
-                <a href="#" class="btn-nav"><i class="fas fa-user"></i> Login</a>
-                <a href="#" class="btn-nav primary"><i class="fas fa-shopping-cart"></i> Keranjang</a>
-                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+                <button class="btn-nav" id="resetLeaderboard"><i class="fas fa-undo"></i> Reset</button>
+                <button class="btn-nav primary" id="cartBtn"><i class="fas fa-shopping-cart"></i> Keranjang</button>
             </div>
         </div>
     </nav>
@@ -29,37 +1039,33 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Top Up Tercepat
+                <i class="fas fa-bolt"></i> Cyber Store · Top Up Terpercaya
             </div>
-            <h1>Top Up Game <br /><span>Murah & Terpercaya</span></h1>
-            <p>Dapatkan voucher game, diamond, dan item premium dengan harga terbaik. Proses instan, aman, dan terpercaya.</p>
+            <h1>
+                Top Up Game <br />
+                <span>Murah & Instan</span>
+            </h1>
+            <p>Dapatkan voucher, diamond, dan item premium dengan harga terbaik. Sistem aman, proses cepat.</p>
             <div class="hero-search">
-                <input type="text" placeholder="Cari produk, game, atau voucher..." id="searchInput" />
+                <input type="text" placeholder="Cari produk..." id="searchInput" />
                 <button><i class="fas fa-search"></i></button>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><span>50K+</span> Transaksi</div>
-                <div class="stat"><span>98%</span> Kepuasan</div>
-                <div class="stat"><span>24/7</span> Support</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== POPULAR PRODUCTS ===== -->
+    <!-- ===== PRODUCTS ===== -->
     <section class="products" id="products">
         <div class="container">
             <div class="section-header">
-                <h2><i class="fas fa-fire" style="color: #ff6b35;"></i> Produk Populer</h2>
-                <span class="product-count">14 item tersedia</span>
+                <h2><i class="fas fa-fire" style="color: var(--orange);"></i> Produk Populer</h2>
+                <span class="product-count" id="productCount">12 item tersedia</span>
             </div>
 
             <div class="product-grid" id="productGrid">
                 <!-- Card 1 -->
-                <div class="product-card">
-                    <div class="product-badge">#2</div>
-                    <div class="product-image">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
+                <div class="product-card" data-id="1" data-name="DRIP CLIENT FF" data-price="15000">
+                    <div class="product-badge">#1</div>
+                    <div class="product-image"><i class="fas fa-gamepad"></i></div>
                     <div class="product-body">
                         <h3>DRIP CLIENT FF NON ROOT</h3>
                         <div class="product-meta">
@@ -68,18 +1074,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp15.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 5.893 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">5.893</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="DRIP CLIENT FF" data-price="15000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="product-card">
-                    <div class="product-badge">#3</div>
-                    <div class="product-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
+                <div class="product-card" data-id="2" data-name="DRIP PROXY FF" data-price="15000">
+                    <div class="product-badge">#2</div>
+                    <div class="product-image"><i class="fas fa-robot"></i></div>
                     <div class="product-body">
                         <h3>DRIP CLIENT PROXY FF</h3>
                         <div class="product-meta">
@@ -88,18 +1095,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp15.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 543 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">543</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="DRIP PROXY FF" data-price="15000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="product-card">
-                    <div class="product-badge">#4</div>
-                    <div class="product-image">
-                        <i class="fas fa-skull"></i>
-                    </div>
+                <div class="product-card" data-id="3" data-name="HG CHEAT FF" data-price="15000">
+                    <div class="product-badge">#3</div>
+                    <div class="product-image"><i class="fas fa-skull"></i></div>
                     <div class="product-body">
                         <h3>HG CHEAT FF</h3>
                         <div class="product-meta">
@@ -108,18 +1116,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp15.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 3.847 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">3.847</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="HG CHEAT FF" data-price="15000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="product-card">
-                    <div class="product-badge">#5</div>
-                    <div class="product-image">
-                        <i class="fas fa-magic"></i>
-                    </div>
+                <div class="product-card" data-id="4" data-name="PRIME HOOK APK" data-price="10000">
+                    <div class="product-badge">#4</div>
+                    <div class="product-image"><i class="fas fa-magic"></i></div>
                     <div class="product-body">
                         <h3>PRIME HOOK APK MOD</h3>
                         <div class="product-meta">
@@ -128,18 +1137,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp10.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.949 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">2.949</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="PRIME HOOK APK" data-price="10000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="product-card">
-                    <div class="product-badge">#6</div>
-                    <div class="product-image">
-                        <i class="fab fa-apple"></i>
-                    </div>
+                <div class="product-card" data-id="5" data-name="FLUORITE IOS FF" data-price="50000">
+                    <div class="product-badge">#5</div>
+                    <div class="product-image"><i class="fab fa-apple"></i></div>
                     <div class="product-body">
                         <h3>FLUORITE IOS FF</h3>
                         <div class="product-meta">
@@ -148,18 +1158,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp50.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.394 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">2.394</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="FLUORITE IOS FF" data-price="50000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="product-card">
-                    <div class="product-badge">#7</div>
-                    <div class="product-image">
-                        <i class="fas fa-users"></i>
-                    </div>
+                <div class="product-card" data-id="6" data-name="PATO ORANGE" data-price="40000">
+                    <div class="product-badge">#6</div>
+                    <div class="product-image"><i class="fas fa-users"></i></div>
                     <div class="product-body">
                         <h3>PATO TEAM ORANGE</h3>
                         <div class="product-meta">
@@ -168,18 +1179,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp40.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 980 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">980</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="PATO ORANGE" data-price="40000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 7 -->
-                <div class="product-card">
-                    <div class="product-badge">#8</div>
-                    <div class="product-image">
-                        <i class="fas fa-users"></i>
-                    </div>
+                <div class="product-card" data-id="7" data-name="PATO BLUE" data-price="30000">
+                    <div class="product-badge">#7</div>
+                    <div class="product-image"><i class="fas fa-users"></i></div>
                     <div class="product-body">
                         <h3>PATO TEAM BLUE</h3>
                         <div class="product-meta">
@@ -188,18 +1200,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp30.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.452 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">1.452</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="PATO BLUE" data-price="30000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 8 -->
-                <div class="product-card">
-                    <div class="product-badge">#9</div>
-                    <div class="product-image">
-                        <i class="fas fa-crosshairs"></i>
-                    </div>
+                <div class="product-card" data-id="8" data-name="MORELLA MLBB" data-price="15000">
+                    <div class="product-badge">#8</div>
+                    <div class="product-image"><i class="fas fa-crosshairs"></i></div>
                     <div class="product-body">
                         <h3>MORELLA MLBB ANDROID</h3>
                         <div class="product-meta">
@@ -208,18 +1221,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp15.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.716 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">2.716</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="MORELLA MLBB" data-price="15000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 9 -->
-                <div class="product-card">
-                    <div class="product-badge">#10</div>
-                    <div class="product-image">
-                        <i class="fab fa-apple"></i>
-                    </div>
+                <div class="product-card" data-id="9" data-name="MIGUL IOS FF" data-price="40000">
+                    <div class="product-badge">#9</div>
+                    <div class="product-image"><i class="fab fa-apple"></i></div>
                     <div class="product-body">
                         <h3>MIGUL IOS FF</h3>
                         <div class="product-meta">
@@ -228,18 +1242,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp40.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.183 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">2.183</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="MIGUL IOS FF" data-price="40000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 10 -->
-                <div class="product-card">
-                    <div class="product-badge">#11</div>
-                    <div class="product-image">
-                        <i class="fas fa-cog"></i>
-                    </div>
+                <div class="product-card" data-id="10" data-name="BR MODS ROOT" data-price="18000">
+                    <div class="product-badge">#10</div>
+                    <div class="product-image"><i class="fas fa-cog"></i></div>
                     <div class="product-body">
                         <h3>BR MODS ROOT FF</h3>
                         <div class="product-meta">
@@ -248,18 +1263,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp18.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.923 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">1.923</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="BR MODS ROOT" data-price="18000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 11 -->
-                <div class="product-card">
-                    <div class="product-badge">#12</div>
-                    <div class="product-image">
-                        <i class="fab fa-apple"></i>
-                    </div>
+                <div class="product-card" data-id="11" data-name="FLUORITE IOS MLBB" data-price="50000">
+                    <div class="product-badge">#11</div>
+                    <div class="product-image"><i class="fab fa-apple"></i></div>
                     <div class="product-body">
                         <h3>FLUORITE IOS MLBB</h3>
                         <div class="product-meta">
@@ -268,18 +1284,19 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp50.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.232 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">1.232</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="FLUORITE IOS MLBB" data-price="50000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 12 -->
-                <div class="product-card">
-                    <div class="product-badge">#13</div>
-                    <div class="product-image">
-                        <i class="fas fa-box"></i>
-                    </div>
+                <div class="product-card" data-id="12" data-name="GBOX IOS" data-price="90000">
+                    <div class="product-badge">#12</div>
+                    <div class="product-image"><i class="fas fa-box"></i></div>
                     <div class="product-body">
                         <h3>GBOX IOS</h3>
                         <div class="product-meta">
@@ -288,216 +1305,58 @@
                         </div>
                         <div class="product-footer">
                             <span class="price">Rp90.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.039 Terjual</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> <span class="sold-count">2.039</span> Terjual</span>
                         </div>
                         <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
-                    </div>
-                </div>
-
-                <!-- Card 13 -->
-                <div class="product-card">
-                    <div class="product-badge">#14</div>
-                    <div class="product-image">
-                        <i class="fas fa-billiard-ball"></i>
-                    </div>
-                    <div class="product-body">
-                        <h3>SENJU 8BALL ANDROID</h3>
-                        <div class="product-meta">
-                            <span class="game-tag"><i class="fas fa-fire"></i> 8 BALL</span>
-                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="price">Rp25.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 3.902 Terjual</span>
-                        </div>
-                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
-                    </div>
-                </div>
-
-                <!-- Card 14 -->
-                <div class="product-card">
-                    <div class="product-badge">#15</div>
-                    <div class="product-image">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="product-body">
-                        <h3>META+ MLBB</h3>
-                        <div class="product-meta">
-                            <span class="game-tag"><i class="fas fa-fire"></i> MLBB</span>
-                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
-                        </div>
-                        <div class="product-discount">-20%</div>
-                        <div class="product-footer">
-                            <span class="price">Rp15.000</span>
-                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.038 Terjual</span>
-                        </div>
-                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                        <button class="btn-checkout-gold" data-product="GBOX IOS" data-price="90000">
+                            <i class="fas fa-crown"></i> Beli Sekarang
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== TOP BUYERS ===== -->
-    <section class="top-buyers">
+    <!-- ===== TOP BUYERS (RESET ===== -->
+    <section class="top-buyers" id="leaderboard">
         <div class="container">
             <div class="section-header">
-                <h2><i class="fas fa-trophy" style="color: #ffd700;"></i> Pembeli Tertinggi</h2>
+                <h2><i class="fas fa-trophy" style="color: var(--gold);"></i> Pembeli Tertinggi</h2>
+                <span class="product-count" id="buyerCount">0 pembeli</span>
             </div>
-
-            <div class="buyer-grid">
-                <div class="buyer-card gold">
-                    <div class="buyer-rank">#1</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-crown"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Dimas Raihan</h4>
-                            <p>di***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 1.500.000</span>
-                        <span>28x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card silver">
-                    <div class="buyer-rank">#2</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Mario Muhammad Ird</h4>
-                            <p>ma***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 1.372.750</span>
-                        <span>82x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card bronze">
-                    <div class="buyer-rank">#3</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>kontol_kamu</h4>
-                            <p>ze***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 945.000</span>
-                        <span>8x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#4</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Radhitya Faeyza</h4>
-                            <p>fa***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 770.000</span>
-                        <span>8x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#5</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>ZERO</h4>
-                            <p>gs***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 695.000</span>
-                        <span>8x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#6</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Reza</h4>
-                            <p>ry***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 690.000</span>
-                        <span>3x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#7</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Putri Putri</h4>
-                            <p>pu***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 632.999</span>
-                        <span>14x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#8</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>Farhan Permata Putra</h4>
-                            <p>fa***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 619.000</span>
-                        <span>21x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#9</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>kennybancin123</h4>
-                            <p>ke***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 615.000</span>
-                        <span>47x transaksi</span>
-                    </div>
-                </div>
-
-                <div class="buyer-card">
-                    <div class="buyer-rank">#10</div>
-                    <div class="buyer-info">
-                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
-                        <div class="buyer-detail">
-                            <h4>NYYYXYZMODZOFC</h4>
-                            <p>mu***@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="buyer-stats">
-                        <span>Rp 2.898.488</span>
-                        <span>156x transaksi</span>
-                    </div>
-                </div>
+            <div class="buyer-grid" id="buyerGrid">
+                <!-- Dinamis dari JS -->
             </div>
         </div>
     </section>
+
+    <!-- ===== QRIS MODAL ===== -->
+    <div class="qris-modal" id="qrisModal">
+        <div class="qris-content">
+            <button class="qris-close" id="qrisClose">&times;</button>
+            <h3><i class="fas fa-qrcode" style="color: var(--gold);"></i> QRIS Payment</h3>
+            <p class="sub">Scan untuk membayar</p>
+
+            <div class="qris-code">
+                <canvas id="qrisCanvas" width="200" height="200"></canvas>
+            </div>
+
+            <div class="qris-amount" id="qrisAmount">Rp15.000</div>
+            <p style="font-size:13px; color:var(--text-secondary);" id="qrisProduct">DRIP CLIENT FF</p>
+
+            <div class="qris-methods">
+                <span><i class="fas fa-mobile-alt"></i> QRIS</span>
+                <span><i class="fas fa-university"></i> Bank</span>
+                <span><i class="fas fa-wallet"></i> E-Wallet</span>
+                <span><i class="fas fa-store"></i> Retail</span>
+            </div>
+
+            <div class="qris-footer">
+                <span><i class="fas fa-check-circle"></i> All Payment</span>
+                <span><i class="fas fa-clock"></i> 24/7</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
@@ -505,7 +1364,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo"><i class="fas fa-crown"></i> VIP<span>Manz</span></div>
-                    <p>Top up game murah, cepat, dan terpercaya. Bergabung dengan ribuan pemain puas.</p>
+                    <p>Top up game murah, cepat, dan terpercaya. Sistem cyber security terjamin.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
@@ -540,6 +1399,298 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // ============================================================
+        //  DATA
+        // ============================================================
+        let buyers = [];
+        let nextBuyerId = 1;
+
+        // ============================================================
+        //  QRIS MODAL
+        // ============================================================
+        const qrisModal = document.getElementById('qrisModal');
+        const qrisClose = document.getElementById('qrisClose');
+        const qrisCanvas = document.getElementById('qrisCanvas');
+        const qrisAmount = document.getElementById('qrisAmount');
+        const qrisProduct = document.getElementById('qrisProduct');
+
+        // QR Code sederhana (tanpa library, pakai canvas manual)
+        function generateSimpleQR(text, canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, size, size);
+
+            // Grid pattern sederhana berdasarkan hash
+            let hash = 0;
+            for (let i = 0; i < text.length; i++) {
+                hash = ((hash << 5) - hash) + text.charCodeAt(i);
+                hash |= 0;
+            }
+
+            const seed = Math.abs(hash);
+            const cellSize = 8;
+            const cols = Math.floor(size / cellSize);
+            const rows = Math.floor(size / cellSize);
+
+            // Position markers (3 sudut)
+            function drawMarker(x, y) {
+                ctx.fillStyle = '#000000';
+                // Outer
+                ctx.fillRect(x, y, 7 * cellSize, 7 * cellSize);
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(x + cellSize, y + cellSize, 5 * cellSize, 5 * cellSize);
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(x + 2 * cellSize, y + 2 * cellSize, 3 * cellSize, 3 * cellSize);
+            }
+
+            drawMarker(0, 0);
+            drawMarker(size - 7 * cellSize, 0);
+            drawMarker(0, size - 7 * cellSize);
+
+            // Data cells
+            let pseudoRandom = seed;
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    // Skip marker areas
+                    if ((row < 7 && col < 7) ||
+                        (row < 7 && col >= cols - 7) ||
+                        (row >= rows - 7 && col < 7)) {
+                        continue;
+                    }
+                    pseudoRandom = (pseudoRandom * 9301 + 49297) % 233280;
+                    const val = (pseudoRandom / 233280);
+                    if (val > 0.55) {
+                        ctx.fillStyle = '#000000';
+                        ctx.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+                    }
+                }
+            }
+
+            // Center logo area (QRIS)
+            const cx = size / 2 - 24;
+            const cy = size / 2 - 24;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(cx, cy, 48, 48);
+            ctx.fillStyle = '#000000';
+            ctx.font = 'bold 18px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('QRIS', size / 2, size / 2 - 2);
+
+            // Tambah border emas
+            ctx.strokeStyle = '#ffd700';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(2, 2, size - 4, size - 4);
+        }
+
+        function openQRIS(product, price) {
+            qrisAmount.textContent = `Rp${price.toLocaleString()}`;
+            qrisProduct.textContent = product;
+            const data = `QRIS|${product}|${price}|${Date.now()}`;
+            generateSimpleQR(data, qrisCanvas);
+            qrisModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        qrisClose.addEventListener('click', () => {
+            qrisModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        qrisModal.addEventListener('click', (e) => {
+            if (e.target === qrisModal) {
+                qrisModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ============================================================
+        //  CHECKOUT : TAMBAH PEMBELI & UPDATE LEADERBOARD
+        // ============================================================
+        function addBuyer(name, amount) {
+            const existing = buyers.find(b => b.name.toLowerCase() === name.toLowerCase());
+            if (existing) {
+                existing.total += amount;
+                existing.count += 1;
+            } else {
+                buyers.push({
+                    id: nextBuyerId++,
+                    name: name,
+                    email: `${name.toLowerCase().replace(/\s/g, '')}@gmail.com`,
+                    total: amount,
+                    count: 1
+                });
+            }
+            // Urutkan descending
+            buyers.sort((a, b) => b.total - a.total);
+            renderLeaderboard();
+            updateProductSold();
+        }
+
+        function renderLeaderboard() {
+            const grid = document.getElementById('buyerGrid');
+            const countEl = document.getElementById('buyerCount');
+
+            if (buyers.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column:1/-1; text-align:center; padding:30px 0; color:var(--text-muted);">
+                        <i class="fas fa-store" style="font-size:32px; display:block; margin-bottom:10px;"></i>
+                        Belum ada pembeli. Jadi yang pertama!
+                    </div>
+                `;
+                countEl.textContent = '0 pembeli';
+                return;
+            }
+
+            countEl.textContent = `${buyers.length} pembeli`;
+
+            const medals = ['gold', 'silver', 'bronze'];
+            grid.innerHTML = buyers.map((b, idx) => {
+                const rank = idx + 1;
+                const medalClass = idx < 3 ? medals[idx] : '';
+                const initial = b.name.charAt(0).toUpperCase();
+                return `
+                    <div class="buyer-card ${medalClass}">
+                        <div class="buyer-rank">#${rank}</div>
+                        <div class="buyer-info">
+                            <div class="buyer-avatar">${initial}</div>
+                            <div class="buyer-detail">
+                                <h4>${b.name}</h4>
+                                <p>${b.email}</p>
+                            </div>
+                        </div>
+                        <div class="buyer-stats">
+                            <span>Rp ${b.total.toLocaleString()}</span>
+                            <span>${b.count}x transaksi</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ============================================================
+        //  UPDATE SOLD COUNT (simulasi)
+        // ============================================================
+        function updateProductSold() {
+            // Tambah random sold count ke produk (simulasi pembelian)
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, idx) => {
+                const soldSpan = card.querySelector('.sold-count');
+                if (soldSpan) {
+                    const current = parseInt(soldSpan.textContent.replace(/\./g, ''));
+                    const increment = Math.floor(Math.random() * 5) + 1;
+                    soldSpan.textContent = (current + increment).toLocaleString();
+                }
+            });
+        }
+
+        // ============================================================
+        //  EVENT : TOMBEL CHECKOUT
+        // ============================================================
+        document.querySelectorAll('.btn-checkout-gold').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const product = this.dataset.product;
+                const price = parseInt(this.dataset.price);
+
+                // Minta nama pembeli
+                const name = prompt('Masukkan nama Anda untuk pembelian:', 'Player' + Math.floor(Math
+                .random() * 1000));
+                if (!name || name.trim() === '') return;
+
+                // Buka QRIS
+                openQRIS(product, price);
+
+                // Simulasi pembayaran (setelah modal dibuka, tambahkan ke leaderboard)
+                // Tapi kita tambahkan setelah user "scan" (simulasi)
+                // Kita akan tambahkan saat modal ditutup dengan konfirmasi
+                const confirmPay = confirm(`Konfirmasi pembayaran Rp${price.toLocaleString()} untuk ${product}?`);
+                if (confirmPay) {
+                    addBuyer(name.trim(), price);
+                    alert(`✅ Pembayaran berhasil!\n${product} - Rp${price.toLocaleString()}\nTerima kasih, ${name.trim()}!`);
+                    qrisModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // ============================================================
+        //  RESET LEADERBOARD
+        // ============================================================
+        document.getElementById('resetLeaderboard').addEventListener('click', function() {
+            if (confirm('Reset semua data pembeli?')) {
+                buyers = [];
+                nextBuyerId = 1;
+                renderLeaderboard();
+                // Reset sold count ke angka awal
+                const soldData = {
+                    'DRIP CLIENT FF': 5893,
+                    'DRIP PROXY FF': 543,
+                    'HG CHEAT FF': 3847,
+                    'PRIME HOOK APK': 2949,
+                    'FLUORITE IOS FF': 2394,
+                    'PATO ORANGE': 980,
+                    'PATO BLUE': 1452,
+                    'MORELLA MLBB': 2716,
+                    'MIGUL IOS FF': 2183,
+                    'BR MODS ROOT': 1923,
+                    'FLUORITE IOS MLBB': 1232,
+                    'GBOX IOS': 2039
+                };
+                document.querySelectorAll('.product-card').forEach(card => {
+                    const name = card.querySelector('h3')?.textContent?.trim();
+                    const soldSpan = card.querySelector('.sold-count');
+                    if (soldSpan && name && soldData[name]) {
+                        soldSpan.textContent = soldData[name].toLocaleString();
+                    }
+                });
+            }
+        });
+
+        // ============================================================
+        //  SEARCH
+        // ============================================================
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+                const match = title.includes(query);
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            document.getElementById('productCount').textContent = `${visible} item tersedia`;
+        });
+
+        // ============================================================
+        //  INSTALL APK (placeholder)
+        // ============================================================
+        document.querySelectorAll('.btn-install').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const name = this.closest('.product-card')?.querySelector('h3')?.textContent || 'Produk';
+                alert(`🔽 Install APK: ${name}\nProses akan dimulai...`);
+            });
+        });
+
+        // ============================================================
+        //  INIT : RENDER EMPTY LEADERBOARD
+        // ============================================================
+        renderLeaderboard();
+
+        // ============================================================
+        //  CART BUTTON (placeholder)
+        // ============================================================
+        document.getElementById('cartBtn').addEventListener('click', function() {
+            alert('🛒 Keranjang belanja\nTotal item: 0\nSilakan pilih produk terlebih dahulu.');
+        });
+
+        console.log('🔥 VIPManz Cyber Store loaded');
+        console.log(`📦 ${document.querySelectorAll('.product-card').length} produk tersedia`);
+        console.log('👑 Leaderboard siap menunggu pembeli pertama.');
+    </script>
+
 </body>
 </html>
