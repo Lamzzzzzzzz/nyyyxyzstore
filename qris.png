@@ -1,0 +1,11 @@
+module.exports = {
+    merchant: 'NyyyxyzModzOfc',
+    nmd: 'ID1026482535188',
+    qrisId: 'NYYYXYZVYERAAA',
+    version: 'v0.0.2026.06.20',
+    printedBy: '93600914',
+    provider: 'ASPI',
+    providerUrl: 'www.aspi-qris.id',
+    imagePath: '/assets/qris.png',
+    waSupport: 'https://wa.me/6285770528356'
+};
