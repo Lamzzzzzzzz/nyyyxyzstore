@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin · NyyyxyzModzOfc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0c12;
+            --bg-secondary: #11161f;
+            --bg-card: #1a212c;
+            --bg-card-hover: #232b3a;
+            --text-primary: #f0f4fa;
+            --text-secondary: #9aa8b9;
+            --text-muted: #5a6a7e;
+            --accent: #6c8cff;
+            --accent-dark: #4a6adf;
+            --accent-glow: rgba(108, 140, 255, 0.25);
+            --gold: #ffd700;
+            --gold-glow: rgba(255, 215, 0, 0.2);
+            --red: #ff4757;
+            --green: #00e676;
+            --border: #2a3344;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.3s ease;
+            --cyber-blue: #00d4ff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* ============================================================
+           LOGIN PAGE
+           ============================================================ */
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at 50% 30%, rgba(108, 140, 255, 0.05), transparent 70%);
+        }
+
+        .login-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .login-box .logo {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .login-box .logo i {
+            color: var(--gold);
+        }
+        .login-box .logo span {
+            color: var(--accent);
+        }
+        .login-box .logo span span {
+            color: var(--text-primary);
+        }
+
+        .login-box .sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .login-box .form-group {
+            margin-bottom: 18px;
+        }
+        .login-box label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: var(--transition);
+            outline: none;
+        }
+        .login-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .login-box .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 8px;
+        }
+        .login-box .btn-login:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .login-box .error-msg {
+            color: var(--red);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .login-box .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .login-box .footer-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ============================================================
+           DASHBOARD
+           ============================================================ */
+        .dashboard {
+            display: none;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Navbar Admin */
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+        }
+
+        .admin-nav .brand {
+            font-size: 20px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .admin-nav .brand i {
+            color: var(--gold);
+        }
+        .admin-nav .brand span {
+            color: var(--accent);
+        }
+
+        .admin-nav .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .admin-nav .user-info .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+        }
+        .admin-nav .user-info .logout {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 13px;
+        }
+        .admin-nav .user-info .logout:hover {
+            background: var(--red);
+            color: #fff;
+            border-color: var(--red);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            border-color: var(--accent);
+        }
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+        .stat-card .value.blue {
+            color: var(--accent);
+        }
+        .stat-card .value.gold {
+            color: var(--gold);
+        }
+        .stat-card .value.green {
+            color: var(--green);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tabs button {
+            padding: 10px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+        .tabs button:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+        .tabs button.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Tables */
+        .table-wrap {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        table th {
+            text-align: left;
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+        table tr:hover td {
+            background: rgba(108, 140, 255, 0.03);
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-badge.pending {
+            background: rgba(255, 165, 0, 0.15);
+            color: #ffa500;
+        }
+        .status-badge.paid {
+            background: rgba(0, 230, 118, 0.15);
+            color: var(--green);
+        }
+        .status-badge.failed {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--red);
+        }
+
+        .btn-action {
+            padding: 4px 12px;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-action.danger {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--red);
+        }
+        .btn-action.danger:hover {
+            background: var(--red);
+            color: #fff;
+        }
+        .btn-action.primary {
+            background: rgba(108, 140, 255, 0.15);
+            color: var(--accent);
+        }
+        .btn-action.primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .login-box {
+                padding: 32px 24px;
+                margin: 16px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .admin-nav {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            .admin-nav .user-info {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .tabs button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            table {
+                font-size: 12px;
+            }
+            table th,
+            table td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    LOGIN PAGE
+    ============================================================ -->
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>Nyyyxyz<span>ModzOfc</span></span>
+            </div>
+            <p class="sub">Admin Panel</p>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="loginUsername" placeholder="Masukkan username" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Masukkan password" />
+            </div>
+
+            <button class="btn-login" id="loginBtn">Login</button>
+            <div class="error-msg" id="loginError">Username atau password salah</div>
+
+            <div class="footer-text">
+                Default: <strong>admin</strong> / <strong>nyyyxyz123</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    DASHBOARD
+    ============================================================ -->
+    <div class="dashboard" id="dashboard">
+        <!-- Navbar -->
+        <nav class="admin-nav">
+            <div class="brand">
+                <i class="fas fa-crown"></i>
+                <span>Nyyyxyz<span>ModzOfc</span></span>
+                <span style="font-size:12px; color:var(--text-muted); font-weight:400; margin-left:8px;">Admin</span>
+            </div>
+            <div class="user-info">
+                <span id="adminName" style="font-size:14px; color:var(--text-secondary);">admin</span>
+                <div class="avatar" id="adminAvatar">A</div>
+                <button class="logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </nav>
+
+        <!-- Stats -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="label">Total Produk</div>
+                <div class="value blue" id="statProducts">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Transaksi</div>
+                <div class="value gold" id="statTransactions">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Pembeli</div>
+                <div class="value green" id="statBuyers">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Pendapatan</div>
+                <div class="value" id="statRevenue" style="color:var(--gold);">Rp0</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="active" data-tab="transactions">Transaksi</button>
+            <button data-tab="products">Produk</button>
+            <button data-tab="buyers">Pembeli</button>
+        </div>
+
+        <!-- Table: Transactions -->
+        <div class="table-wrap" id="tab-transactions">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Produk</th>
+                        <th>Pembeli</th>
+                        <th>Jumlah</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionsBody">
+                    <tr><td colspan="7" style="text-align:center; color:var(--text-muted);">Belum ada transaksi</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table: Products -->
+        <div class="table-wrap" id="tab-products" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Game</th>
+                        <th>Platform</th>
+                        <th>Harga</th>
+                        <th>Terjual</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="productsBody">
+                    <tr><td colspan="6" style="text-align:center; color:var(--text-muted);">Belum ada produk</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table: Buyers -->
+        <div class="table-wrap" id="tab-buyers" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Total</th>
+                        <th>Transaksi</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="buyersBody">
+                    <tr><td colspan="6" style="text-align:center; color:var(--text-muted);">Belum ada pembeli</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  DATA DUMMY (simulasi database)
+        // ============================================================
+        let products = [
+            { id: 'prod-1', name: 'DRIP CLIENT FF NON ROOT', game: 'FREE FIRE', platform: 'Android', price: 15000,
+                sold: 5893 },
+            { id: 'prod-2', name: 'DRIP CLIENT PROXY FF', game: 'FREE FIRE', platform: 'Android', price: 15000,
+                sold: 543 },
+            { id: 'prod-3', name: 'HG CHEAT FF', game: 'FREE FIRE', platform: 'Android', price: 15000, sold: 3847 },
+            { id: 'prod-4', name: 'PRIME HOOK APK MOD', game: 'FREE FIRE', platform: 'Android', price: 10000,
+                sold: 2949 },
+            { id: 'prod-5', name: 'FLUORITE IOS FF', game: 'FREE FIRE', platform: 'iPhone', price: 50000, sold: 2394 },
+            { id: 'prod-6', name: 'PATO TEAM ORANGE', game: 'FREE FIRE', platform: 'Android', price: 40000, sold: 980 },
+            { id: 'prod-7', name: 'PATO TEAM BLUE', game: 'FREE FIRE', platform: 'Android', price: 30000, sold: 1452 },
+            { id: 'prod-8', name: 'MORELLA MLBB ANDROID', game: 'MLBB', platform: 'Android', price: 15000, sold: 2716 },
+            { id: 'prod-9', name: 'MIGUL IOS FF', game: 'FREE FIRE', platform: 'iPhone', price: 40000, sold: 2183 },
+            { id: 'prod-10', name: 'BR MODS ROOT FF', game: 'FREE FIRE', platform: 'Android', price: 18000, sold: 1923 },
+            { id: 'prod-11', name: 'FLUORITE IOS MLBB', game: 'MLBB', platform: 'iPhone', price: 50000, sold: 1232 },
+            { id: 'prod-12', name: 'GBOX IOS', game: 'TOOLS IOS', platform: 'iPhone', price: 90000, sold: 2039 }
+        ];
+
+        let transactions = [];
+        let buyers = [];
+
+        // ============================================================
+        //  LOGIN
+        // ============================================================
+        const loginPage = document.getElementById('loginPage');
+        const dashboard = document.getElementById('dashboard');
+        const loginError = document.getElementById('loginError');
+
+        const ADMIN_USER = 'admin';
+        const ADMIN_PASS = 'nyyyxyz123';
+
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            if (username === ADMIN_USER && password === ADMIN_PASS) {
+                loginPage.style.display = 'none';
+                dashboard.style.display = 'block';
+                document.getElementById('adminName').textContent = username;
+                document.getElementById('adminAvatar').textContent = username.charAt(0).toUpperCase();
+                loadData();
+            } else {
+                loginError.style.display = 'block';
+                setTimeout(() => { loginError.style.display = 'none'; }, 3000);
+            }
+        });
+
+        // Enter key login
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && loginPage.style.display !== 'none') {
+                document.getElementById('loginBtn').click();
+         
