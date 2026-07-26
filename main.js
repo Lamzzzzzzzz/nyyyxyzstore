@@ -305,3 +305,121 @@ console.log(`📦 ${document.querySelectorAll('.product-card').length} produk te
 console.log('👑 Leaderboard siap menunggu pembeli pertama.');
 console.log('📞 Bantuan: https://wa.me/6285770528356');
 console.log('🛒 Sistem checkout & QRIS aktif.');
+
+// ============================================================
+//  DURATION MODAL
+// ============================================================
+const durationModal = document.getElementById('durationModal');
+const durationClose = document.getElementById('durationClose');
+const durationProductName = document.getElementById('durationProductName');
+const durationCheckoutBtn = document.getElementById('durationCheckoutBtn');
+let selectedDuration = null;
+let selectedProduct = null;
+let basePrice = 0;
+
+// Produk yang punya paket durasi
+const DURATION_PRODUCTS = ['DRIP CLIENT FF', 'DRIP PROXY FF'];
+
+// Harga per durasi
+const DURATION_PRICES = {
+    1: 15000,
+    3: 35000,
+    15: 120000,
+    30: 200000
+};
+
+function openDurationModal(productName) {
+    selectedProduct = productName;
+    selectedDuration = null;
+    durationProductName.textContent = productName;
+
+    // Reset selection
+    document.querySelectorAll('.duration-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+
+    durationModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDurationModal() {
+    durationModal.classList.remove('active');
+    document.body.style.overflow = '';
+    selectedDuration = null;
+    selectedProduct = null;
+}
+
+// Pilih durasi
+document.querySelectorAll('.duration-card').forEach(card => {
+    card.addEventListener('click', function() {
+        document.querySelectorAll('.duration-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        selectedDuration = parseInt(this.dataset.days);
+        basePrice = parseInt(this.dataset.price);
+    });
+});
+
+// Checkout dari durasi
+durationCheckoutBtn.addEventListener('click', function() {
+    if (!selectedDuration || !selectedProduct) {
+        alert('Pilih durasi terlebih dahulu!');
+        return;
+    }
+
+    const name = prompt('Masukkan nama Anda untuk pembelian:', 'Player' + Math.floor(Math.random() * 1000));
+    if (!name || name.trim() === '') return;
+
+    const productWithDuration = `${selectedProduct} (${selectedDuration} Hari)`;
+    const price = basePrice;
+
+    closeDurationModal();
+    openQRIS(productWithDuration, price);
+
+    const confirmPay = confirm(`Konfirmasi pembayaran Rp${price.toLocaleString()} untuk ${productWithDuration}?`);
+    if (confirmPay) {
+        addBuyer(name.trim(), price);
+        alert(`✅ Pembayaran berhasil!\n${productWithDuration} - Rp${price.toLocaleString()}\nTerima kasih, ${name.trim()}!`);
+        closeQRIS();
+    }
+});
+
+// Close modal
+durationClose?.addEventListener('click', closeDurationModal);
+durationModal?.addEventListener('click', (e) => {
+    if (e.target === durationModal) closeDurationModal();
+});
+
+// ============================================================
+//  MODIFIKASI CHECKOUT: Cek apakah produk punya durasi
+// ============================================================
+const originalCheckout = handleCheckout;
+handleCheckout = function(e) {
+    const btn = e.currentTarget;
+    const product = btn.dataset.product;
+    const price = parseInt(btn.dataset.price);
+
+    // Cek apakah produk termasuk yang punya paket durasi
+    if (DURATION_PRODUCTS.includes(product)) {
+        openDurationModal(product);
+        return;
+    }
+
+    // Jika tidak, jalankan checkout normal
+    const name = prompt('Masukkan nama Anda untuk pembelian:', 'Player' + Math.floor(Math.random() * 1000));
+    if (!name || name.trim() === '') return;
+
+    openQRIS(product, price);
+
+    const confirmPay = confirm(`Konfirmasi pembayaran Rp${price.toLocaleString()} untuk ${product}?`);
+    if (confirmPay) {
+        addBuyer(name.trim(), price);
+        alert(`✅ Pembayaran berhasil!\n${product} - Rp${price.toLocaleString()}\nTerima kasih, ${name.trim()}!`);
+        closeQRIS();
+    }
+};
+
+// Re-bind event listeners
+document.querySelectorAll('.btn-checkout-gold').forEach(btn => {
+    btn.removeEventListener('click', handleCheckout);
+    btn.addEventListener('click', handleCheckout);
+});
