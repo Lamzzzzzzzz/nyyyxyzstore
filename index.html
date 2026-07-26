@@ -1,43 +1,545 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>VIP PANEL</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Up Game Murah Terpercaya</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<nav>
-  <h2>VIP PANEL</h2>
-  <a href="login.html">Login</a>
-</nav>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>VIP<span>Manz</span></span>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn-nav"><i class="fas fa-user"></i> Login</a>
+                <a href="#" class="btn-nav primary"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero">
-  <h1>Premium Digital Services</h1>
-  <p>Cepat • Aman • Terpercaya</p>
-  <button onclick="location.href='login.html'">Mulai</button>
-</section>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i> Top Up Tercepat
+            </div>
+            <h1>Top Up Game <br /><span>Murah & Terpercaya</span></h1>
+            <p>Dapatkan voucher game, diamond, dan item premium dengan harga terbaik. Proses instan, aman, dan terpercaya.</p>
+            <div class="hero-search">
+                <input type="text" placeholder="Cari produk, game, atau voucher..." id="searchInput" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span>50K+</span> Transaksi</div>
+                <div class="stat"><span>98%</span> Kepuasan</div>
+                <div class="stat"><span>24/7</span> Support</div>
+            </div>
+        </div>
+    </section>
 
-<section class="services">
-  <div class="card">
-    <h3>Instagram Boost</h3>
-    <p>Naikkan engagement akun lu</p>
-  </div>
+    <!-- ===== POPULAR PRODUCTS ===== -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-fire" style="color: #ff6b35;"></i> Produk Populer</h2>
+                <span class="product-count">14 item tersedia</span>
+            </div>
 
-  <div class="card">
-    <h3>TikTok Growth</h3>
-    <p>Percepat perkembangan akun</p>
-  </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge">#2</div>
+                    <div class="product-image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>DRIP CLIENT FF NON ROOT</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp15.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 5.893 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
 
-  <div class="card">
-    <h3>YouTube Promotion</h3>
-    <p>Tingkatkan exposure video</p>
-  </div>
-</section>
+                <!-- Card 2 -->
+                <div class="product-card">
+                    <div class="product-badge">#3</div>
+                    <div class="product-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>DRIP CLIENT PROXY FF</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp15.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 543 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
 
-<footer>
-  <p>© 2026 VIP PANEL</p>
-</footer>
+                <!-- Card 3 -->
+                <div class="product-card">
+                    <div class="product-badge">#4</div>
+                    <div class="product-image">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>HG CHEAT FF</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp15.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 3.847 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
 
+                <!-- Card 4 -->
+                <div class="product-card">
+                    <div class="product-badge">#5</div>
+                    <div class="product-image">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>PRIME HOOK APK MOD</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp10.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.949 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card">
+                    <div class="product-badge">#6</div>
+                    <div class="product-image">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>FLUORITE IOS FF</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-apple"></i> iPhone</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp50.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.394 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card">
+                    <div class="product-badge">#7</div>
+                    <div class="product-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>PATO TEAM ORANGE</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp40.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 980 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-card">
+                    <div class="product-badge">#8</div>
+                    <div class="product-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>PATO TEAM BLUE</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp30.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.452 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-card">
+                    <div class="product-badge">#9</div>
+                    <div class="product-image">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>MORELLA MLBB ANDROID</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> MLBB</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp15.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.716 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="product-card">
+                    <div class="product-badge">#10</div>
+                    <div class="product-image">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>MIGUL IOS FF</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-apple"></i> iPhone</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp40.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.183 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="product-card">
+                    <div class="product-badge">#11</div>
+                    <div class="product-image">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>BR MODS ROOT FF</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> FREE FIRE</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp18.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.923 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="product-card">
+                    <div class="product-badge">#12</div>
+                    <div class="product-image">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>FLUORITE IOS MLBB</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> MLBB</span>
+                            <span class="platform-tag"><i class="fab fa-apple"></i> iPhone</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp50.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.232 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="product-card">
+                    <div class="product-badge">#13</div>
+                    <div class="product-image">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>GBOX IOS</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> TOOLS IOS</span>
+                            <span class="platform-tag"><i class="fab fa-apple"></i> iPhone</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp90.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 2.039 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="product-card">
+                    <div class="product-badge">#14</div>
+                    <div class="product-image">
+                        <i class="fas fa-billiard-ball"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>SENJU 8BALL ANDROID</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> 8 BALL</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">Rp25.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 3.902 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="product-card">
+                    <div class="product-badge">#15</div>
+                    <div class="product-image">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="product-body">
+                        <h3>META+ MLBB</h3>
+                        <div class="product-meta">
+                            <span class="game-tag"><i class="fas fa-fire"></i> MLBB</span>
+                            <span class="platform-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                        <div class="product-discount">-20%</div>
+                        <div class="product-footer">
+                            <span class="price">Rp15.000</span>
+                            <span class="sold"><i class="fas fa-shopping-bag"></i> 1.038 Terjual</span>
+                        </div>
+                        <button class="btn-install"><i class="fas fa-download"></i> INSTALL APK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOP BUYERS ===== -->
+    <section class="top-buyers">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-trophy" style="color: #ffd700;"></i> Pembeli Tertinggi</h2>
+            </div>
+
+            <div class="buyer-grid">
+                <div class="buyer-card gold">
+                    <div class="buyer-rank">#1</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-crown"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Dimas Raihan</h4>
+                            <p>di***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 1.500.000</span>
+                        <span>28x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card silver">
+                    <div class="buyer-rank">#2</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Mario Muhammad Ird</h4>
+                            <p>ma***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 1.372.750</span>
+                        <span>82x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card bronze">
+                    <div class="buyer-rank">#3</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>kontol_kamu</h4>
+                            <p>ze***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 945.000</span>
+                        <span>8x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#4</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Radhitya Faeyza</h4>
+                            <p>fa***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 770.000</span>
+                        <span>8x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#5</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>ZERO</h4>
+                            <p>gs***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 695.000</span>
+                        <span>8x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#6</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Reza</h4>
+                            <p>ry***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 690.000</span>
+                        <span>3x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#7</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Putri Putri</h4>
+                            <p>pu***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 632.999</span>
+                        <span>14x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#8</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>Farhan Permata Putra</h4>
+                            <p>fa***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 619.000</span>
+                        <span>21x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#9</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>kennybancin123</h4>
+                            <p>ke***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 615.000</span>
+                        <span>47x transaksi</span>
+                    </div>
+                </div>
+
+                <div class="buyer-card">
+                    <div class="buyer-rank">#10</div>
+                    <div class="buyer-info">
+                        <div class="buyer-avatar"><i class="fas fa-user"></i></div>
+                        <div class="buyer-detail">
+                            <h4>NYYYXYZMODZOFC</h4>
+                            <p>mu***@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="buyer-stats">
+                        <span>Rp 2.898.488</span>
+                        <span>156x transaksi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo"><i class="fas fa-crown"></i> VIP<span>Manz</span></div>
+                    <p>Top up game murah, cepat, dan terpercaya. Bergabung dengan ribuan pemain puas.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Layanan</h4>
+                    <a href="#">Top Up FF</a>
+                    <a href="#">Top Up MLBB</a>
+                    <a href="#">Voucher Game</a>
+                    <a href="#">Cheat & Mods</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Informasi</h4>
+                    <a href="#">Tentang Kami</a>
+                    <a href="#">Cara Order</a>
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Kontak</h4>
+                    <a href="#"><i class="fab fa-whatsapp"></i> +62 812-3456-7890</a>
+                    <a href="#"><i class="fas fa-envelope"></i> support@vipmanz.com</a>
+                    <a href="#"><i class="fas fa-clock"></i> 24/7 Online</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VIPManz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
