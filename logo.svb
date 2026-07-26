@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0a800;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f0a800;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="cyberBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6c8cff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0f4fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9aa8b9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Glow orb behind crown -->
+  <circle cx="35" cy="35" r="30" fill="url(#goldGlow)" filter="url(#glow)" />
+
+  <!-- Cyber shield background -->
+  <g transform="translate(5, 5)">
+    <!-- Hexagon shield -->
+    <polygon points="30,0 60,15 60,45 30,60 0,45 0,15"
+             fill="none" stroke="rgba(108,140,255,0.15)" stroke-width="1.5" />
+    <polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5"
+             fill="rgba(20,28,42,0.6)" stroke="rgba(108,140,255,0.08)" stroke-width="1" />
+
+    <!-- Crown -->
+    <g transform="translate(5, 8)">
+      <path d="M10 30 L16 12 L22 20 L28 8 L34 20 L40 12 L46 30 L10 30Z"
+            fill="url(#gold)" filter="url(#shadow)" />
+      <path d="M12 30 L44 30 L42 42 L14 42 L12 30Z"
+            fill="#1a212c" stroke="url(#gold)" stroke-width="1.5" />
+      <rect x="18" y="36" width="4" height="6" rx="1" fill="url(#gold)" />
+      <rect x="34" y="36" width="4" height="6" rx="1" fill="url(#gold)" />
+      <!-- Crown jewel -->
+      <circle cx="28" cy="20" r="4" fill="#00d4ff" opacity="0.8" />
+      <circle cx="28" cy="20" r="2" fill="#fff" opacity="0.4" />
+    </g>
+
+    <!-- Cyber lines around shield -->
+    <line x1="0" y1="15" x2="0" y2="45" stroke="rgba(0,212,255,0.1)" stroke-width="1" />
+    <line x1="60" y1="15" x2="60" y2="45" stroke="rgba(0,212,255,0.1)" stroke-width="1" />
+    <line x1="15" y1="0" x2="45" y2="0" stroke="rgba(0,212,255,0.05)" stroke-width="1" />
+    <line x1="15" y1="60" x2="45" y2="60" stroke="rgba(0,212,255,0.05)" stroke-width="1" />
+
+    <!-- Small decorative dots -->
+    <circle cx="5" cy="17.5" r="1.5" fill="rgba(0,212,255,0.2)" />
+    <circle cx="55" cy="17.5" r="1.5" fill="rgba(0,212,255,0.2)" />
+    <circle cx="5" cy="42.5" r="1.5" fill="rgba(0,212,255,0.2)" />
+    <circle cx="55" cy="42.5" r="1.5" fill="rgba(0,212,255,0.2)" />
+  </g>
+
+  <!-- Text: Nyyyxyz -->
+  <text x="75" y="32" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22"
+        fill="url(#textGrad)" letter-spacing="1" filter="url(#shadow)">
+    Nyyyxyz
+  </text>
+
+  <!-- Text: ModzOfc -->
+  <text x="75" y="52" font-family="'Inter', -apple-system, sans-serif" font-weight="600" font-size="14"
+        fill="url(#cyberBlue)" letter-spacing="2" opacity="0.9">
+    MODZ OFC
+  </text>
+
+  <!-- Gold accent line -->
+  <line x1="75" y1="56" x2="210" y2="56" stroke="url(#gold)" stroke-width="1.5" opacity="0.3" />
+
+  <!-- Small star decorations -->
+  <text x="210" y="20" font-size="8" fill="url(#gold)" opacity="0.4">✦</text>
+  <text x="205" y="52" font-size="6" fill="rgba(0,212,255,0.3)">✦</text>
+
+  <!-- Version watermark -->
+  <text x="210" y="64" font-family="'Inter', sans-serif" font-weight="400" font-size="6"
+        fill="rgba(255,255,255,0.1)" letter-spacing="0.5">
+    v1.0
+  </text>
+</svg>
