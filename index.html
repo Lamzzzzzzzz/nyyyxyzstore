@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VIPManz · Cyber Store</title>
+    <title>NyyyxyzModzOfc · Top Up Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -35,6 +35,7 @@
             --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             --cyber-blue: #00d4ff;
             --cyber-purple: #7b2ffc;
+            --brand: #6c8cff;
         }
 
         html {
@@ -68,7 +69,6 @@
             pointer-events: none;
         }
 
-        /* Floating Items */
         .cyber-item {
             position: absolute;
             font-size: 28px;
@@ -257,7 +257,6 @@
             }
         }
 
-        /* ===== GLOW ORB ===== */
         .glow-orb {
             position: fixed;
             border-radius: 50%;
@@ -294,7 +293,6 @@
             }
         }
 
-        /* ===== CONTAINER ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -385,6 +383,15 @@
             background: #f0c800;
             transform: translateY(-2px);
             box-shadow: 0 0 50px var(--gold-glow);
+        }
+        .btn-nav.whatsapp {
+            background: #25D366;
+            color: #fff;
+            border-color: #25D366;
+        }
+        .btn-nav.whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
         }
 
         /* ===== HERO ===== */
@@ -670,7 +677,7 @@
             color: #0a0c12;
         }
 
-        /* ===== TOP BUYERS (RESET) ===== */
+        /* ===== TOP BUYERS ===== */
         .top-buyers {
             padding: 40px 0 50px;
             background: var(--bg-secondary);
@@ -865,6 +872,25 @@
             color: var(--green);
         }
 
+        .qris-wa {
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+        .qris-wa a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .qris-wa a:hover {
+            text-decoration: underline;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             padding: 40px 0 24px;
@@ -932,6 +958,12 @@
             margin-right: 6px;
             width: 18px;
         }
+        .footer-links a.whatsapp-link {
+            color: #25D366;
+        }
+        .footer-links a.whatsapp-link:hover {
+            color: #1da851;
+        }
 
         .footer-bottom {
             border-top: 1px solid var(--border);
@@ -946,7 +978,8 @@
             .nav-actions .btn-nav {
                 display: none;
             }
-            .nav-actions .btn-nav.primary {
+            .nav-actions .btn-nav.primary,
+            .nav-actions .btn-nav.whatsapp {
                 display: inline-flex;
             }
             .product-grid {
@@ -1026,9 +1059,12 @@
         <div class="container nav-container">
             <div class="logo">
                 <i class="fas fa-crown"></i>
-                <span>VIP<span>Manz</span></span>
+                <span>Nyyyxyz<span>ModzOfc</span></span>
             </div>
             <div class="nav-actions">
+                <a href="https://wa.me/6285770528356" target="_blank" class="btn-nav whatsapp">
+                    <i class="fab fa-whatsapp"></i> Bantuan
+                </a>
                 <button class="btn-nav" id="resetLeaderboard"><i class="fas fa-undo"></i> Reset</button>
                 <button class="btn-nav primary" id="cartBtn"><i class="fas fa-shopping-cart"></i> Keranjang</button>
             </div>
@@ -1039,7 +1075,7 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Cyber Store · Top Up Terpercaya
+                <i class="fas fa-bolt"></i> NyyyxyzModzOfc · Top Up Terpercaya
             </div>
             <h1>
                 Top Up Game <br />
@@ -1317,7 +1353,7 @@
         </div>
     </section>
 
-    <!-- ===== TOP BUYERS (RESET ===== -->
+    <!-- ===== TOP BUYERS ===== -->
     <section class="top-buyers" id="leaderboard">
         <div class="container">
             <div class="section-header">
@@ -1351,6 +1387,12 @@
                 <span><i class="fas fa-store"></i> Retail</span>
             </div>
 
+            <div class="qris-wa">
+                <a href="https://wa.me/6285770528356" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Butuh bantuan? Chat kami
+                </a>
+            </div>
+
             <div class="qris-footer">
                 <span><i class="fas fa-check-circle"></i> All Payment</span>
                 <span><i class="fas fa-clock"></i> 24/7</span>
@@ -1363,12 +1405,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo"><i class="fas fa-crown"></i> VIP<span>Manz</span></div>
+                    <div class="logo"><i class="fas fa-crown"></i> Nyyyxyz<span>ModzOfc</span></div>
                     <p>Top up game murah, cepat, dan terpercaya. Sistem cyber security terjamin.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6285770528356" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -1388,13 +1430,13 @@
                 </div>
                 <div class="footer-links">
                     <h4>Kontak</h4>
-                    <a href="#"><i class="fab fa-whatsapp"></i> +62 812-3456-7890</a>
-                    <a href="#"><i class="fas fa-envelope"></i> support@vipmanz.com</a>
+                    <a href="https://wa.me/6285770528356" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> +62 857-7052-8356</a>
+                    <a href="#"><i class="fas fa-envelope"></i> support@nyyyxyzmodz.com</a>
                     <a href="#"><i class="fas fa-clock"></i> 24/7 Online</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VIPManz. All rights reserved.</p>
+                <p>&copy; 2026 NyyyxyzModzOfc. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1415,14 +1457,12 @@
         const qrisAmount = document.getElementById('qrisAmount');
         const qrisProduct = document.getElementById('qrisProduct');
 
-        // QR Code sederhana (tanpa library, pakai canvas manual)
         function generateSimpleQR(text, canvas) {
             const ctx = canvas.getContext('2d');
             const size = canvas.width;
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(0, 0, size, size);
 
-            // Grid pattern sederhana berdasarkan hash
             let hash = 0;
             for (let i = 0; i < text.length; i++) {
                 hash = ((hash << 5) - hash) + text.charCodeAt(i);
@@ -1434,10 +1474,8 @@
             const cols = Math.floor(size / cellSize);
             const rows = Math.floor(size / cellSize);
 
-            // Position markers (3 sudut)
             function drawMarker(x, y) {
                 ctx.fillStyle = '#000000';
-                // Outer
                 ctx.fillRect(x, y, 7 * cellSize, 7 * cellSize);
                 ctx.fillStyle = '#ffffff';
                 ctx.fillRect(x + cellSize, y + cellSize, 5 * cellSize, 5 * cellSize);
@@ -1449,11 +1487,9 @@
             drawMarker(size - 7 * cellSize, 0);
             drawMarker(0, size - 7 * cellSize);
 
-            // Data cells
             let pseudoRandom = seed;
             for (let row = 0; row < rows; row++) {
                 for (let col = 0; col < cols; col++) {
-                    // Skip marker areas
                     if ((row < 7 && col < 7) ||
                         (row < 7 && col >= cols - 7) ||
                         (row >= rows - 7 && col < 7)) {
@@ -1468,7 +1504,6 @@
                 }
             }
 
-            // Center logo area (QRIS)
             const cx = size / 2 - 24;
             const cy = size / 2 - 24;
             ctx.fillStyle = '#ffffff';
@@ -1479,7 +1514,6 @@
             ctx.textBaseline = 'middle';
             ctx.fillText('QRIS', size / 2, size / 2 - 2);
 
-            // Tambah border emas
             ctx.strokeStyle = '#ffd700';
             ctx.lineWidth = 4;
             ctx.strokeRect(2, 2, size - 4, size - 4);
@@ -1488,7 +1522,7 @@
         function openQRIS(product, price) {
             qrisAmount.textContent = `Rp${price.toLocaleString()}`;
             qrisProduct.textContent = product;
-            const data = `QRIS|${product}|${price}|${Date.now()}`;
+            const data = `QRIS|NyyyxyzModzOfc|${product}|${price}|${Date.now()}`;
             generateSimpleQR(data, qrisCanvas);
             qrisModal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1522,7 +1556,6 @@
                     count: 1
                 });
             }
-            // Urutkan descending
             buyers.sort((a, b) => b.total - a.total);
             renderLeaderboard();
             updateProductSold();
@@ -1569,13 +1602,9 @@
             }).join('');
         }
 
-        // ============================================================
-        //  UPDATE SOLD COUNT (simulasi)
-        // ============================================================
         function updateProductSold() {
-            // Tambah random sold count ke produk (simulasi pembelian)
             const cards = document.querySelectorAll('.product-card');
-            cards.forEach((card, idx) => {
+            cards.forEach((card) => {
                 const soldSpan = card.querySelector('.sold-count');
                 if (soldSpan) {
                     const current = parseInt(soldSpan.textContent.replace(/\./g, ''));
@@ -1586,7 +1615,7 @@
         }
 
         // ============================================================
-        //  EVENT : TOMBEL CHECKOUT
+        //  EVENT : TOMBOL CHECKOUT
         // ============================================================
         document.querySelectorAll('.btn-checkout-gold').forEach(btn => {
             btn.addEventListener('click', function(e) {
@@ -1594,17 +1623,12 @@
                 const product = this.dataset.product;
                 const price = parseInt(this.dataset.price);
 
-                // Minta nama pembeli
                 const name = prompt('Masukkan nama Anda untuk pembelian:', 'Player' + Math.floor(Math
                 .random() * 1000));
                 if (!name || name.trim() === '') return;
 
-                // Buka QRIS
                 openQRIS(product, price);
 
-                // Simulasi pembayaran (setelah modal dibuka, tambahkan ke leaderboard)
-                // Tapi kita tambahkan setelah user "scan" (simulasi)
-                // Kita akan tambahkan saat modal ditutup dengan konfirmasi
                 const confirmPay = confirm(`Konfirmasi pembayaran Rp${price.toLocaleString()} untuk ${product}?`);
                 if (confirmPay) {
                     addBuyer(name.trim(), price);
@@ -1623,7 +1647,6 @@
                 buyers = [];
                 nextBuyerId = 1;
                 renderLeaderboard();
-                // Reset sold count ke angka awal
                 const soldData = {
                     'DRIP CLIENT FF': 5893,
                     'DRIP PROXY FF': 543,
@@ -1687,9 +1710,10 @@
             alert('🛒 Keranjang belanja\nTotal item: 0\nSilakan pilih produk terlebih dahulu.');
         });
 
-        console.log('🔥 VIPManz Cyber Store loaded');
+        console.log('🔥 NyyyxyzModzOfc Cyber Store loaded');
         console.log(`📦 ${document.querySelectorAll('.product-card').length} produk tersedia`);
         console.log('👑 Leaderboard siap menunggu pembeli pertama.');
+        console.log('📞 Bantuan: https://wa.me/6285770528356');
     </script>
 
 </body>
